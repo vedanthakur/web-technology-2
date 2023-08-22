@@ -35,7 +35,7 @@ Why database is more important? Write PHP code to save feedback form data to MyS
             die("Could not connect to Database");
         }
 
-        $sql = "INSERT INTO feedback (`name`, `email`, `message`) VALUES($name, $email, $message)";
+        $sql = "INSERT INTO feedback (`name`, `email`, `message`) VALUES('$name', '$email', '$message')";
 
         $result = mysqli_query($conn, $sql);
 

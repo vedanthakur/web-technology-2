@@ -1,4 +1,6 @@
 <?php
+// 2021 Fall 
+// 2 b)
     if (isset($_POST["submit"])) {
         $name = $_POST["name"];
         $email = $_POST["email"];
@@ -6,7 +8,7 @@
         $password = $_POST["password"];
         $password_again = $_POST["passwordAgain"];
 
-        if (($password === $password_again) ) {
+        if (($password === $password_again) && !empty($name) && !empty($email) && !empty($password) && !empty($mobile) ) {
             
             $dbserver = "localhost";
             $dbuser = "root";
