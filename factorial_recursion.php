@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Factorial Calculator</h1>
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <form method="post" action="">
         Enter a number: <input type="number" name="number" required>
         <input type="submit" value="Calculate">
     </form>
@@ -26,7 +26,7 @@
     }
 
     // Check if the form is submitted
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST["number"])) {
         $number = $_POST['number'];
         $result = factorial($number);
         echo "<p>The factorial of $number is $result</p>";
