@@ -5,7 +5,7 @@
 </head>
 <body>
     <form action="" method="post">
-        Email To: <input type="email_to" name="email" required><br>
+        Email To: <input type="email" name="email_to" required><br>
         Subject: <input type="text" name="subject"><br>
         Message: <br>
         <textarea name="message" cols="30" rows="10" required></textarea><br>

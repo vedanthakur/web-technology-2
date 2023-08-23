@@ -14,29 +14,17 @@ function isPalindrome($number) {
    
     // Compare the original number with the reversed number
     if ($numberStr === $reversedStr) {
-        return true; // It’s a palindrome
+        echo $number . " is a palindrome.";
     } else {
-        return false; // It’s not a palindrome
+        echo $number . " is not a palindrome.";
     }
 }
 
 // Example usage of the function
-$number1 = 121;
+$number = 121;
+isPalindrome($number);
 
-if (isPalindrome($number1)) {
-    echo $number1 . " is a palindrome.";
-} else {
-    echo $number1 . " is not a palindrome.";
-}
-
-echo "<br>";
-
-$number2 = 12321;
-
-if (isPalindrome($number2)) {
-    echo $number2 . " is a palindrome.";
-} else {
-    echo $number2 . " is not a palindrome.";
-}
+$number = 112;
+isPalindrome($number);
 
 ?>
