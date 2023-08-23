@@ -7,6 +7,6 @@ function add($rumbers){
     return $sum;
 }
 
-$numbers = array(1,2,3,4);
-add($number);
+$numbers = [1,2,3,4];
+echo add($numbers);
 ?>
