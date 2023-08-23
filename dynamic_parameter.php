@@ -1,7 +1,7 @@
 <?php
-function add($rumbers){
+function add($numbers){
     $sum = 0;
-    foreach($numbers as $number){
+    foreach ($numbers as $number){
         $sum += $number;
     }
     return $sum;
