@@ -1,5 +1,5 @@
 // The program will get data from this url
-// http://localhost:8080/HelloForm?first_name=ZARA&last_name=ALI
+// http://localhost:8080/HelloForm?first_name=Gazal&last_name=Thakur
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
