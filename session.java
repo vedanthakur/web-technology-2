@@ -2,27 +2,26 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class SessionExampleServlet extends HttpServlet {
+public class SessionExample extends HttpServlet {
+
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         response.setContentType("text/html");
-        PrintWriter printWriter = response.getWriter();
+        PrintWriter out = response.getWriter();
 
-        HttpSession session = request.getSession(); // Retrieve or create a session
+        // Get the session object
+        HttpSession session = request.getSession();
 
-        Integer visitCount = (Integer) session.getAttribute("visitCount"); // Get the visit count from session
-        if (visitCount == null) {
-            visitCount = 1;
-        } else {
-            visitCount++;
-        }
-        // same as in php, 
-        // $_SESSION["visitCount"] = $visitcount;
-        session.setAttribute("visitCount", visitCount); // Update the visit count in session
+        // Set the session attribute
+        session.setAttribute("name", "John Doe");
 
-        printWriter.println("<html><head><title>Session Example</title></head><body>");
-        printWriter.println("<h1>Session Example</h1>");
-        printWriter.println("<p>Session ID: " + session.getId() + "</p>");
-        printWriter.println("<p>Visit Count: " + visitCount + "</p>");
-        printWriter.println("</body></html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Session Example</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<p>Your name has been set to <b>" + session.getAttribute("name") + "</b>.</p>");
+        out.println("</body>");
+        out.println("</html>");
     }
 }
