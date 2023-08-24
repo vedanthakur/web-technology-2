@@ -1,7 +1,7 @@
 <?php
 /* 2016     
-    1 b.)   What is user defined function in PHP? 
-            WAP to calculate the number palindrome using user defined function. 
+    1 b.)   What is user defined function in PHP? WAP to 
+            calculate the number palindrome using user defined function. 
 */
 
 // Function to check if a number is a palindrome

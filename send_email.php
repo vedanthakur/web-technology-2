@@ -1,4 +1,4 @@
-<!-- send mail using php  -->
+<!-- send mail using php.  -->
 <!DOCTYPE html>
 <html>
 <head>

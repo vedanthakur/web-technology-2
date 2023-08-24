@@ -1,7 +1,7 @@
 <!-- 2019 Spring
     1 b) What is user defined function? Write a PHP code to 
     calculate the factorial of given number using recursive function? 
-    (Create HTML form input the number given by the user).
+    (Create HTML form input the number given by the user)
 -->
 <!DOCTYPE html>
 <html>
