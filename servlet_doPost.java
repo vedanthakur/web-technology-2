@@ -5,15 +5,23 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class HelloForm extends HttpServlet {
+public class DoPostExample extends HttpServlet {
+
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        String docType = "<html><head><title>Names</title></head><body>";
-        try {
-            out.println(docType + "<p>First Name: " + request.getParameter("first_name") + "<br>Second Name: " + request.getParameter("last_name") + "</p></body></html>");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        PrintWriter pw = response.getWriter();
+
+        // Get the name parameter
+        String name = request.getParameter("name");
+
+        pw.println("<html>");
+        pw.println("<head>");
+        pw.println("<title>DoPost Example</title>");
+        pw.println("</head>");
+        pw.println("<body>");
+        pw.println("<p>Hello, <b>" + name + "</b>!</p>");
+        pw.println("</body>");
+        pw.println("</html>");
     }
 }
