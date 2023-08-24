@@ -1,11 +1,12 @@
-// The program will get data from this url
-// http://localhost:8080/HelloForm?first_name=ZARA&last_name=ALI
+// The program will get data from form submited via post method
+// code is same as get method, only doPost() is used instead of doGet()
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
 public class HelloForm extends HttpServlet {
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         String docType = "<html><head><title>Names</title></head><body>";
