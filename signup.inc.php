@@ -10,7 +10,7 @@
 
         $isEmailOk = false;
         // email validation
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $isEmailOk = true;
         }
         else{
