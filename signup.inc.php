@@ -35,9 +35,8 @@
 
             if (!$runsql) {
                 die("Not inserted");
-            } else {
-                echo "Inserted into databse table.";
-            }
+            } 
+            echo "Inserted into databse table.";
         } else {
             echo "Password is not match with password again.";
         }

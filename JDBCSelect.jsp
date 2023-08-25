@@ -4,7 +4,6 @@
         30 years (make your own assumptions for table and database). -->
 
 <%@ page import="java.sql.*" %>
-<%@ page import="javax.servlet.http.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,11 +15,10 @@
 <%
     // JDBC connection parameters
     String jdbcUrl = "jdbc:mysql://localhost:3306/customer_db";
-    String username = "your_db_username";
-    String password = "your_db_password";
+    String username = "root";
+    String password = "";
 
     try {
-        Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(jdbcUrl, username, password);
 
         String sql = "SELECT name, age, phone, address FROM customer WHERE address = 'kshetrapur' AND age < 30";
