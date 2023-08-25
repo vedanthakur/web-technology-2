@@ -7,7 +7,7 @@ public class CookieExample extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
-        PrintWriter pw = response.getWriter();
+        PrintWriter out = response.getWriter();
 
         // Create a cookie
         Cookie cookie = new Cookie("name", "John Doe");
@@ -18,13 +18,13 @@ public class CookieExample extends HttpServlet {
         // Add the cookie to the response
         response.addCookie(cookie);
 
-        pw.println("<html>");
-        pw.println("<head>");
-        pw.println("<title>Cookie Example</title>");
-        pw.println("</head>");
-        pw.println("<body>");
-        pw.println("<p>Your name has been set to <b>" + cookie.getName() + "</b>. This cookie will expire in 24 hours.</p>");
-        pw.println("</body>");
-        pw.println("</html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Cookie Example</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<p>Your name has been set to <b>" + cookie.getName() + "</b>. This cookie will expire in 24 hours.</p>");
+        out.println("</body>");
+        out.println("</html>");
     }
 }

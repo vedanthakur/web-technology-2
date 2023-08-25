@@ -10,18 +10,18 @@ public class DoPostExample extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
-        PrintWriter pw = response.getWriter();
+        PrintWriter out = response.getWriter();
 
         // Get the name parameter
         String name = request.getParameter("name");
 
-        pw.println("<html>");
-        pw.println("<head>");
-        pw.println("<title>DoPost Example</title>");
-        pw.println("</head>");
-        pw.println("<body>");
-        pw.println("<p>Hello, <b>" + name + "</b>!</p>");
-        pw.println("</body>");
-        pw.println("</html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>DoPost Example</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<p>Hello, <b>" + name + "</b>!</p>");
+        out.println("</body>");
+        out.println("</html>");
     }
 }

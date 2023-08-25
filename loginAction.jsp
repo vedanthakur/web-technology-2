@@ -23,24 +23,17 @@
 
             if (resultSet.next()) {
                 // Successful login
-    %>
-                <p>Login successful!</p>
-    <%
+                out.println("Login successful!");
             } else {
                 // Invalid login
-    %>
-                <p>Invalid username or password.</p>
-    <%
+                out.println("Invalid username or password.");
             }
             
             resultSet.close();
             statement.close();
             connection.close();
         } catch (Exception e) {
-    %>
-            <p>Error</p>
-
-    <% 
+            out.println("Error: " + e.getMessage());
         }
     %>
 </body>
