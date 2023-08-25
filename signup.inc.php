@@ -8,7 +8,16 @@
         $password = $_POST["password"];
         $password_again = $_POST["passwordAgain"];
 
-        if (($password === $password_again) && !empty($name) && !empty($email) && !empty($password) && !empty($mobile) ) {
+        $isEmailOk = false;
+        // email validation
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $isEmailOk = true;
+        }
+        else{
+            $isEmailOk = false;
+        }
+
+        if ($isEmailOk && ($password === $password_again) && !empty($name) && !empty($email) && !empty($password) && !empty($mobile) ) {
             
             $dbserver = "localhost";
             $dbuser = "root";

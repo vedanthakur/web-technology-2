@@ -5,7 +5,7 @@
 */
 
 // Function to check if a number is a palindrome
-function isPalindrome($number) {
+function checkPalindrome($number) {
     // Convert the number to a string
     $numberStr = (string) $number;
 
@@ -22,9 +22,9 @@ function isPalindrome($number) {
 
 // Example usage of the function
 $number = 121;
-isPalindrome($number);
+checkPalindrome($number);
 
 $number = 112;
-isPalindrome($number);
+checkPalindrome($number);
 
 ?>

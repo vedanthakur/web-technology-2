@@ -12,7 +12,7 @@
     <h1>Factorial Calculator</h1>
     <form method="post" action="">
         Enter a number: <input type="number" name="number" required>
-        <input type="submit" value="Calculate">
+        <input type="submit" name="submit" value="Calculate">
     </form>
     
     <?php
