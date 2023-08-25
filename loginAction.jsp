@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Action</title>
+</head>
+<body>
+    <%
+        String dbUrl = "jdbc:mysql://192.168.10.20:3306/dbname";
+        String dbUsername = "admin";
+        String dbPassword = "pass";
+        
+        String inputUsername = request.getParameter("username");
+        String inputPassword = request.getParameter("password");
+        
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM users WHERE username='" + inputUsername + "' AND password='" + inputPassword + "'";
+            ResultSet resultSet = statement.executeQuery(query);
+
+            if (resultSet.next()) {
+                // Successful login
+    %>
+                <p>Login successful!</p>
+    <%
+            } else {
+                // Invalid login
+    %>
+                <p>Invalid username or password.</p>
+    <%
+            }
+            
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (Exception e) {
+    %>
+            <p>Error</p>
+
+    <% 
+        }
+    %>
+</body>
+</html>
