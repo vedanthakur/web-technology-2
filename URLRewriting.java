@@ -7,20 +7,20 @@ public class URLRewriting extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
-        PrintWriter pw = response.getWriter();
+        PrintWriter out = response.getWriter();
 
         String name = request.getParameter("name");
 
         // Rewrite the URL
         String rewrittenURL = response.encodeURL("/HelloForm?name=" + name);
 
-        pw.println("<html>");
-        pw.println("<head>");
-        pw.println("<title>URL Rewriting</title>");
-        pw.println("</head>");
-        pw.println("<body>");
-        pw.println("<p>The rewritten URL is <a href=\"" + rewrittenURL + "\">" + rewrittenURL + "</a>.</p>");
-        pw.println("</body>");
-        pw.println("</html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>URL Rewriting</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<p>The rewritten URL is <a href=\"" + rewrittenURL + "\">" + rewrittenURL + "</a>.</p>");
+        out.println("</body>");
+        out.println("</html>");
     }
 }
